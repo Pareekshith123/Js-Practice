@@ -26,10 +26,19 @@ function getSumPairZero(array){
     let left =0
     let right =array.length-1
     while(left<right){
-      
+        let sum=0
+        sum =array[left]+ array[right]
+     
+      if(sum==0){
+       return ` this is ${[array[left],array[right]]}` 
+      }else if(sum < 0){
+        right--;
+      }else{
+        left++
+      }
     }
 }
 
 
-const result = getSumPairZero([-5,-4,-3,-2,-1,0,1,-2,3,4,5])
+const result = getSumPairZero([-4,-3,-2,-1,0,1,-2,3,4])
 console.log("result",result)
